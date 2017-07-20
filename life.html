@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+  <div>
+      <input type="text" v-model="aa">
+      {{aa}}
+  </div>
+  <script>
+
+      <!--程序生命周期-->
+      var obj=new Vue({
+          el:"div",
+          data:{
+              aa:0
+          },
+          beforeCreate:function(){
+              console.log("对象开始构建");
+          },
+          created:function(){
+              console.log("对象创建成功");
+          },
+          beforeMount:function(){
+                console.log("绑定之前");
+          },
+          mounted:function(){
+              console.log("绑定成功");
+          },
+          beforeUpdate:function(){
+              console.log(1);
+              console.log("更新之前");
+          },
+          updated:function(){
+              console.log(2);
+              console.log("更新之后");
+          },
+          activated:function(){
+            console.log(111)
+          },
+          deactivated:function(){
+              console.log(2222)
+          },
+          beforeDestroy:function(){
+              console.log("对象销毁之前")
+          },
+          destroyed:function(){
+              console.log("对象销毁完毕")
+          },
+      })
+      obj.$destroy();
+  </script>
+</body>
+</html>

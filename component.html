@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+
+ <div>
+      <custom-list></custom-list>
+  </div>
+  <script>
+
+      /*
+      *   1. 具有抽象结构的能力
+      *   2. 行为能力，逻辑能力
+      *
+      *
+      * */
+      Vue.component("custom-list",{
+          template:`
+             <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+             </ul>
+            `
+      })
+      var obj=new Vue({
+          el:"div"
+      })
+
+  </script>
+</body>
+</html>

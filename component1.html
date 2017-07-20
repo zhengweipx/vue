@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+
+
+ <div>
+      <custom-list :datas="['111','222','3333']"></custom-list>
+  </div>
+  <script>
+
+
+      /*
+      *   1. 具有抽象结构的能力
+      *   2. 行为能力，逻辑能力
+      *   3. 处理数据的能力
+      *
+      *
+      * */
+      Vue.component("custom-list",{
+          props:["datas"],
+          template:`
+             <ul>
+                <li @click="change('red')" :class="{red:color=='red'}" v-for="item in this.datas">{{item}}</li>
+             </ul>
+            `,
+          data(){
+              return {
+                color:""
+              }
+          },
+          methods:{
+              change:function(color){
+                    this.color=color;
+              }
+          }
+      })
+
+
+      var obj=new Vue({
+          el:"div"
+      })
+
+  </script>
+</body>
+</html>
