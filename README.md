@@ -4,13 +4,13 @@
 * 3.methods 绑定该区间内的方法，但是这些方法会随着视图的变化而不断的执行
 * 4.computed 绑定该区间内的方法，使用方式不需要调用该方法，写方法名就可以，并且如果说和他关联的数据没有发生改变，那么视图的变化不会触发该方法的执行
 # 事件对象：
-          @click="show($event)";
+        @click="show($event)";
 # 事件冒泡：
-          阻止冒泡：①event.cancelBubble=true; 
+        阻止冒泡：①event.cancelBubble=true; 
                    ②@click.stop="";    //推荐
 # 默认行为(默认事件)：                                         
-          contextmenu() -> 右键触发 contextmenu 事件
-          阻止：①event.preventDefault();
+        contextmenu() -> 右键触发 contextmenu 事件
+        阻止：①event.preventDefault();
 	     ②@contextmenu.prevent=""  //推荐           
 # 键盘事件：
 	@keydown  $event  event.keyCode;
@@ -21,20 +21,20 @@
 	v-bind:src="url"  
 	简写  :src="url"    :width="width"   :height="height"   :title="title"   //推荐     
 # class和style:
-          :class=""   v-bind:class=""
-          :style=""   v-bind:style=""
+	  :class=""   v-bind:class=""
+	  :style=""   v-bind:style=""
 
-          :class="[red]"   red是数据              style{.red{color:red}}   data:{red:'red'}
-          :class="[red,b]" 
+	  :class="[red]"   red是数据              style{.red{color:red}}   data:{red:'red'}
+	  :class="[red,b]" 
 
-          :class="{red:true,blue:true}"     red,blue是类名     style{.red{color:red}} 
+	  :class="{red:true,blue:true}"     red,blue是类名     style{.red{color:red}} 
 
-          ：class="json"     data:{json:{red:true,blue:true}}
-          ```````````````````````````````````````````````````````
-          :style:
-          :style="[red]"                  data:{red:{color:'red'},b:{bcakground:'blue'}}
-          :style="[red,b]"
-          注意：符合样式采用驼峰命名法
+	  ：class="json"     data:{json:{red:true,blue:true}}
+	  ```````````````````````````````````````````````````````
+	  :style:
+	  :style="[red]"                  data:{red:{color:'red'},b:{bcakground:'blue'}}
+	  :style="[red,b]"
+	  注意：符合样式采用驼峰命名法
  # 模版：
 	{{msg}}   数据更新模版变化
 	{{*msg}}   数据只绑定一次    （1.0版）    <span v-once>这个将不会改变: {{ msg }}</span> （2.0版）
