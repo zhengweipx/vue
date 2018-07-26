@@ -7,5 +7,5 @@
           @click="show($event)";
 # 事件冒泡：
           阻止冒泡：①event.cancelBubble=true; 
-				           ②@click.stop="";    //推荐
+                   ②@click.stop="";    //推荐
            
